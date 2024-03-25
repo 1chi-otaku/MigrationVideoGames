@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using VideoGames;
 
 
@@ -19,6 +18,7 @@ namespace VideoGamesContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Server=PECHKA\SQLEXPRESS;Database=VideoGames;Integrated Security=SSPI;TrustServerCertificate=true");
+
         }
     }
 }

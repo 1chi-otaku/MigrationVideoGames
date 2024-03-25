@@ -9,13 +9,10 @@ class MainClass
     {
         using (var context = new VideoGamesContext.VideoGamesContext())
         {
-            // Выполняем запрос к таблице Game и включаем связанные данные Studio и Genre
             var games = context.Games
                 .Include(g => g.Studio)
                 .Include(g => g.Genre)
                 .ToList();
-
-            // Выводим информацию о каждой игре
             foreach (var game in games)
             {
                 Console.WriteLine($"Title: {game.Title}");
